@@ -1,0 +1,11 @@
+﻿dog
+cat
+fish
+apple
+man
+pie
+phone
+mouse
+tablet
+chair
+windows
