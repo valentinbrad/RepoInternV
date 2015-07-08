@@ -35,23 +35,25 @@ namespace Project5
 
         static void printWordIfOk(string rez)
         {
-            Console.WriteLine();
+            
             Console.WriteLine("Your word is composed of:" + rez);
-            Console.ReadKey();
+            
         }
         static void printWordIfNotOk()
         {
-            Console.WriteLine();
+            
             Console.WriteLine("Word can not be composed!");
-            Console.ReadKey();
+            
         }
 
         static void printFunction(string rez,string word,string[] lines)
         {
+            Console.WriteLine();
             if (rez == "")
                 printWordIfNotOk();
             else
                 printWordIfOk(verifyWord(word, lines));
+            Console.ReadKey();
         }
 
 
@@ -64,7 +66,8 @@ namespace Project5
                 if (word.Contains(lines[i]))
                 {
                     int index = word.IndexOf(lines[i]);
-                    rez = rez + " " + word.Substring(index, lines[i].Length);
+                    rez = rez + word.Substring(index, lines[i].Length);
+                    rez = rez + " ";
                     if (index>0 && index + lines[i].Length==word.Length)
                     {
                         word = word.Substring(0,index);
@@ -79,10 +82,12 @@ namespace Project5
                     i = 0;
                 }
             }
-            if (rez.Length < copy.Length)
+            
+            if (rez.Length-1 <= copy.Length)
             {
                 rez = "";
             }
+            
             return rez;
 
         }
