@@ -8,4 +8,4 @@ phone
 mouse
 tablet
 chair
-window
+windows
